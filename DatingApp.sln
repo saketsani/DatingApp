@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp", "DatingApp\DatingApp.csproj", "{38BCBCC6-AB69-4D00-90D3-AFA851416A72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38BCBCC6-AB69-4D00-90D3-AFA851416A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38BCBCC6-AB69-4D00-90D3-AFA851416A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38BCBCC6-AB69-4D00-90D3-AFA851416A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38BCBCC6-AB69-4D00-90D3-AFA851416A72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B955A01E-E98F-4E9E-A2EF-1B32FA009D2F}
+	EndGlobalSection
+EndGlobal
