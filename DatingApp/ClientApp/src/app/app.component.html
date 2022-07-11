@@ -1,5 +1,8 @@
 <body>
-  <app-nav-menu></app-nav-menu>
+ <ul *ngFor="let items of users">
+  <li>{{items.id}}</li>
+  <li>{{items.userName}}</li>
+ </ul>
   <div class="container">
     <router-outlet></router-outlet>
   </div>
