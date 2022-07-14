@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from './services/app.service';
+import { User } from './_models/user';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +9,16 @@ import { AppService } from './services/app.service';
 export class AppComponent implements OnInit {
   users:any;
   title = 'app';
-  constructor(private appservice:AppService) { }
+  constructor(private _service:AppService) { }
 
   ngOnInit() {
-  this.Users();
+  this.serCurrentUser();
   }
 
-
-  Users(){
-    this.appservice.UsersService().subscribe({
-      next:res=>this.users = res,
-      error:error=>console.log(error)
-
-    })
+  serCurrentUser(){
+    const user:User = JSON.parse(localStorage.getItem('user')!);
+    this._service.setCurrentUSer(user);
   }
+
+  
 }
