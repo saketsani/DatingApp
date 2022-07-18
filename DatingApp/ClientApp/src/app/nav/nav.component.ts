@@ -27,10 +27,7 @@ model:any={};
     this._service.login(this.model).subscribe(res=>{
      this.router.navigateByUrl('/members');
         this.model={};  
-    },error=>{
-      console.log(error);
-      this.toastr.error(error.error);
-    });  
+    }); 
   }
 
   logout(){

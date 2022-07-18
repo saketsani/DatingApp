@@ -1,0 +1,15 @@
+<h4>Refresing the pasge is diappear the error</h4>
+<ng-container *ngIf="error">
+<h5 class="test-danger">
+    Error: {{error.message}}
+</h5>
+<p class="font-weight-bold">
+    Note: If you are seeing this then angulaar is not to blame!
+</p>
+<p>What to do next</p>
+<ol>
+    <li>open the chrome dev tool</li>
+</ol>
+<p>Following is the stack trace</p>
+<code class="mt-5" style="background-color:whitesmoke;">{{error.details}}</code>
+</ng-container>
