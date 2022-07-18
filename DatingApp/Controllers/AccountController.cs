@@ -2,6 +2,7 @@
 using DatingApp.DTOs;
 using DatingApp.Entities;
 using DatingApp.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
@@ -43,6 +44,7 @@ namespace DatingApp.Controllers
             };
         }
 
+        
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {

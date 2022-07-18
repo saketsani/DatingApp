@@ -1,25 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" href="#">Dating App</a>
+    <a class="navbar-brand" routerLink="/">Dating App</a>
 
-    <ul class="navbar-nav mr-auto" *ngIf="_service.currentUser$ |async">
-      <li class="nav-item">
-        <a class="nav-link " href="#">Matches</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">List</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
-      </li>
+    <ul class="navbar-nav mr-auto">
+      <ng-container *ngIf="_service.currentUser$ |async">
+        <li class="nav-item">
+          <a class="nav-link " routerLink="/members" routerLinkActive="active">Matches</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="lists" routerLinkActive="active">List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
+        </li>
+      </ng-container>
     </ul>
 
-    <div class="dropdown" *ngIf="_service.currentUser$ |async">
+    <div class="dropdown" *ngIf="(_service.currentUser$ |async) as user">
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDarkDropdownMenuLink" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome user
+            Welcome {{user.username | titlecase}}
           </a>
           <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><a class="dropdown-item" href="#">Edit Profile</a></li>
@@ -35,7 +37,7 @@
       <input class="form-control me-2" type="text" name="username" [(ngModel)]="model.username" placeholder="Username">
       <input class="form-control me-2" type="password" name="username" [(ngModel)]="model.password"
         placeholder="password">
-      <button class="btn btn-outline-success" type="submit">Login</button>
+      <button class="btn btn-success" type="submit">Login</button>
     </form>
   </div>
 
