@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { User } from '../_models/user';
 import { ReplaySubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -14,7 +15,7 @@ import { ReplaySubject } from 'rxjs';
 
 export class AppService {
 
-  baseUrl = 'https://localhost:44327/api/';
+  baseUrl = environment.apiUrl;
 
   private currentUserSource = new ReplaySubject<User | null>(1);
   currentUser$ = this.currentUserSource.asObservable();
