@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AppService } from '../services/app.service';
 
@@ -12,12 +13,16 @@ export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
   //updatedChildComponent: boolean =false;
     model: any = {};
+    registerForm : FormGroup;
   constructor(private _service:AppService,private toastr:ToastrService) { }
 
   ngOnInit(): void {
     // console.log('Users from home component', this.usersFromHomeComponent);
   }
 
+  initilizeForm(){
+    
+  }
   register() {
     this._service.register(this.model).subscribe(res=>{
       console.log(res);

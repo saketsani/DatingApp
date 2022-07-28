@@ -19,7 +19,8 @@ export class MembersService {
 
   getMembers() {
     if(this.members.length > 0) return of(this.members);  // this is aaded for state manamgement
-    return this.http.get<Member[]>(this.baseUrl + 'users').pipe(
+    return this.http.get<Member[]>(this.baseUrl + 'users')
+    .pipe(
       map(members =>{  // this is also added for state manamgement 23,24,25 lines
         this.members = members;
         return members;
