@@ -26,6 +26,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { CacheInterceptor } from './_interceptors/cache.interceptor';
 import { FormTestComponent } from './_interceptors/form-test/form-test.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TextInputComponent } from './_forms/text-input/text-input.component'
+import { DateInputComponent } from './_forms/date-input/date-input.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { FormTestComponent } from './_interceptors/form-test/form-test.component
     ServerErrorComponent,
     MemberCardComponent,
     MemberEditComponent,
-    FormTestComponent
+    FormTestComponent,
+    TextInputComponent,
+    DateInputComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -53,8 +58,10 @@ import { FormTestComponent } from './_interceptors/form-test/form-test.component
     AppRoutingModule,
     SharedModule,
     NgxGalleryModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+   
   ],
+  
   providers: [
    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

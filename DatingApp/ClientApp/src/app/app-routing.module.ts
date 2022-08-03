@@ -13,6 +13,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 import { FormTestComponent } from './_interceptors/form-test/form-test.component';
+import { DateInputComponent } from './_forms/date-input/date-input.component';
 
 
 const routes :Routes = [
@@ -32,7 +33,7 @@ const routes :Routes = [
 {path:'not-found', component:NotFoundComponent},
 {path:'errors', component:TestErrorsComponent},
 {path:'server-error', component:ServerErrorComponent},
-{path:'formtest', component:FormTestComponent},
+{path:'date', component:DateInputComponent},
 {path:'**',component:NotFoundComponent,pathMatch:'full'}
 ];
 

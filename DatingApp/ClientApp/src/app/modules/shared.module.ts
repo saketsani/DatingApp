@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import {NgxGalleryModule} from '@kolkov/ngx-gallery';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,13 +11,16 @@ import {NgxGalleryModule} from '@kolkov/ngx-gallery';
   declarations: [],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass:'toast-bottom-right'
     }),
-    NgxGalleryModule
+    NgxGalleryModule,
+    BsDatepickerModule.forRoot()
   ],
   exports:[
-    ToastrModule
+    ToastrModule,
+    BsDatepickerModule
   ]
 })
 export class SharedModule { }
